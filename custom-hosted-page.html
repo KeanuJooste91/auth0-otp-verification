@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="auth0-lock-html">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="author" content="Auth0" />
+    <meta name="description" content="Easily link two accounts into one" />
+    <title>Auth0 OTP Extension</title>
+    <link
+      rel="shortcut icon"
+      href="https://auth0.com/auth0-styleguide/img/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://storstgcmsartefacts.blob.core.windows.net/cdn-web-styleartefacts/auth0/imsonline-stg/otp-extension.css"
+    />
+    {{ ExtensionCSS }}
+    {{ CustomCSS }}
+  </head>
+  <body>
+    {{ Auth0Widget }} {{ ExtensionScripts }}
+
+    <style>
+      :root {
+        --app-white: #ffffff;
+        --app-springbok-cream: #e8e5ce;
+        --app-agulhas-indigo: #221b3b;
+        --app-ocean-teal: #009d80;
+        --app-pintoage-burgundy: #571b39;
+        --app-gazania-gold: #cf6f13;
+        --app-cape-coral: #fbaa96;
+        --app-leatherback-green: #164848;
+        --app-marula-green: #0a3323;
+        --app-warn-yellowood: #fcaa28;
+        --app-protea-red: #d83949;
+        --app-galjoen-grey: #74908d;
+        --app-cyan-blue: #4fa2da;
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-widget {
+        width: 340px;
+      }
+
+      /* restyle edits */
+      .auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-lock-submit {
+        background-color: var(--app-agulhas-indigo) !important;
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-header-bg {
+        background-color: rgb(247 247 247);
+      }
+
+      .auth0-lock-submit {
+        background-color: var(--app-agulhas-indigo) !important;
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-header {
+        border-radius: 0;
+      }
+
+      .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-header-bg .auth0-lock-header-bg-blur {
+        opacity: 0;
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-header-bg .auth0-lock-header-bg-solid {
+        opacity: 0;
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-widget {
+        border-radius: 0;
+      }
+
+      .auth0-lock-widget {
+        box-shadow: none !important;
+      }
+
+      .auth0-lock-content-body-wrapper {
+        box-shadow: 0 4px 9px rgba(0, 0, 0, 0.09) !important;
+      }
+
+      /* restyle edits end */
+
+      .auth0-lock.auth0-lock {
+        position: absolute;
+        top: 0;
+      }
+
+      .auth0-lock-cred-pane-internal-wrapper {
+        border-radius: 6px;
+      }
+
+      @media (min-width: 481px) {
+        .auth0-lock.auth0-lock .auth0-lock-cred-pane-internal-wrapper {
+          max-height: none;
+        }
+      }
+
+      .auth0-lock-header {
+        border-radius: 0;
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-submit {
+        color: var(--app-white);
+        border-radius: 0;
+      }
+
+      g {
+        fill: var(--app-white);
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-tabs li.auth0-lock-tabs-current {
+        box-shadow: 0 1px 0 0 var(--app-gazania-gold);
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-tabs li a,
+      .auth0-lock.auth0-lock .auth0-lock-tabs li span,
+      .auth0-lock.auth0-lock .auth0-lock-tabs li.auth0-lock-tabs-current span {
+        color: var(--app-gazania-gold);
+      }
+
+      .auth0-lock-error-msg {
+        color: var(--app-protea-red);
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-error .auth0-lock-input-wrap {
+        border-color: var(--app-protea-red);
+      }
+
+      .auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-error {
+        background-color: rgb(165, 0, 52, 0.1);
+        color: #a50034;
+      }
+
+      .auth0-lock.auth0-lock
+      .auth0-global-message.auth0-global-message-success {
+        background: rgb(0, 150, 129, 0.1);
+        color: var(--app-ocean-teal);
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-form div p {
+        white-space: pre;
+      }
+
+      .auth0-lock-name {
+        color: var(--app-ocean-teal);
+        color: var(--app-protea-red);
+        font-size: 12px !important;
+        line-height: 16px !important;
+      }
+
+      .entity-number-help-link {
+        color: var(--app-gazania-gold);
+        font-size: 12px;
+        padding: 5px 0;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .entity-number-pdf-link {
+        color: var(--app-gazania-gold);
+        font-size: 12px;
+        text-decoration: underline !important;
+        cursor: pointer;
+      }
+
+      .entity-number-info-block-wrapper > div {
+        padding: 0.5em;
+        background-color: #F2F2F2;
+      }
+
+      .entity-number-info-block-wrapper {
+        height: 160px;
+        transition: height 0.35s ease-in;
+        overflow: hidden;
+      }
+
+      .entity-number-info-block-wrapper.closed {
+        height: 0;
+        transition: height 0.25s ease-out;
+        overflow: hidden;
+      }
+
+      .entity-number-info-block-wrapper p {
+        color: #757575 !important;
+        white-space: normal !important;
+        text-align: left !important;
+        font-size: 12px !important;
+        line-height: 1em !important;
+      }
+
+      .entity-number-info-block-wrapper p:last-of-type {
+        margin-bottom: 3px !important;
+      }
+
+      .auth0-lock.auth0-lock .auth0-lock-form div p span {
+        white-space: normal;
+      }
+
+      .auth0-lock-header-avatar{
+        height: 0;
+        width: 0;
+        display: none !important;
+      }
+
+    </style>
+  </body>
+</html>
